@@ -1,0 +1,19 @@
+#! /bin/sh
+
+# Set ant home
+AWELE_HOME=`dirname "$0"`/..
+
+# Build CLASSPATH
+for i in ${AWELE_HOME}/build/*.jar
+do
+  if [ -f "$i" ] ; then
+    if [ -z "$CLASSPATH" ] ; then
+      CLASSPATH="$i"
+    else
+      CLASSPATH="$i":"$CLASSPATH"
+    fi
+  fi
+done
+
+# Launch Ant
+exec java -classpath "$CLASSPATH" net.sweetohm.awele.Main "$@"

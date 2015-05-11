@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project name="awele" default="all" basedir=".">
+ <description>Build Awele Project</description>
+
+ <property name="name" value="awele"/>
+ <property name="src" value="src"/>
+ <property name="build" value="build"/>
+ <property file="build.properties"/>
+ <property name="constants" value="${src}/net/sweetohm/awele/Constants"/>
+
+ <!-- Build constants file using properties -->
+ <target name="const"
+         description="Build constants file using properties">
+  <copy file="${constants}"
+        tofile="${constants}.java"
+        filtering="true"
+        overwrite="true">
+   <filterset><filtersfile file="build.properties"/></filterset>
+  </copy>
+ </target>
+
+ <!-- Compile Java source files -->
+ <target name="bin" depends="const"
+         description="Compile Java source files">
+  <mkdir dir="${build}"/>
+  <javac srcdir="${src}"
+         destdir="${build}"
+         debug="on"
+         deprecation="off"/>
+ </target>
+
+ <!-- Build Jar file -->
+ <target name="jar" depends="bin"
+         description="Build Jar file">
+  <jar jarfile="${build}/${name}.jar"
+       manifest="src/manifest">
+   <fileset dir="build"
+            includes="**/*.class"/>
+   <fileset dir="src"
+            includes="**/*.gif"/>
+  </jar>
+ </target>
+
+ <!-- Build the whole project -->
+ <target name="all" depends="clean,jar"
+         description="Build the whole project"/>
+
+ <!-- Run the application -->
+ <target name="run" depends="jar"
+         description="Run the application">
+   <java jar="${build}/${name}.jar"
+         fork="true"/>
+ </target>
+
+ <!-- Delete temporary files -->
+ <target name="clean"
+         description="Delete temporary files">
+  <delete dir="${build}"/>
+ </target>
+
+</project>
