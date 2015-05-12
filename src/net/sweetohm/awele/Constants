@@ -26,10 +26,9 @@ public interface Constants {
     /**
      * The version
      */
-    public static final String VERSION="@version@";
+    public static final String VERSION="@VERSION@";
     /**
      * The copyright message
      */
-    public static final String COPYRIGHT="@copyright@";
+    public static final String COPYRIGHT="@COPYRIGHT@";
 }
-
