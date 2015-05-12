@@ -1,5 +1,11 @@
 # Semantic Change Log
 
+- version: ?.?.?
+  date:    2015-05-??
+  summary: ???
+  fixed:
+  - "Replaced ant build file with a makefile."
+
 - version: 1.0.0
   date:    2015-05-12
   summary: First release
