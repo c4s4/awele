@@ -1,30 +1,23 @@
-AWELE
-=====
-
-What is it?
------------
+---
+title:  Awele
+author: Michel Casabianca
+date:   2015-08-28
+email:  casa@sweetohm.net
+---
 
 Awele is a program to play Awele against your computer. Take care, it's a bit
 Strong :o)
 
-The Latest Version
-------------------
+How to play?
+------------
 
-Details of the latest version can be found on my home page at
-<http://www.sweetohm.net/html/awele.en.html>.
+You can play it online at: <http://sweetohm.net/html/awele.applet.html>. You
+must have enabled Java applets in your browser.
 
-Documentation
--------------
-
-Documentation is available in HTML format, in the doc/ directory.
+You can read the rules of the game at: <http://www.sweetohm.net/html/awele.html>.
 
 Licensing
 ---------
 
-This software is licensed under the terms you may find in the file
-named "LICENSE" in this directory.
-
-Thanks for playing Awele.
-
-Michel Casabianca
-casa@sweetohm.net
+This application is released under the GPL license. For more information, please
+read [the license](LICENSE.txt).
