@@ -13,12 +13,13 @@ CLEAR=\033[0m
 
 help:
 	@echo "$(YELLOW)Help page$(CLEAR)"
-	@echo "$(CYAN)help$(CLEAR)  Print this help page"
-	@echo "$(CYAN)const$(CLEAR) Generate constant source file"
-	@echo "$(CYAN)build$(CLEAR) Build class files"
-	@echo "$(CYAN)jar$(CLEAR)   Generate JAR file"
-	@echo "$(CYAN)run$(CLEAR)   Run application"
-	@echo "$(CYAN)clean$(CLEAR) Clean generated files"
+	@echo "$(CYAN)help$(CLEAR)    Print this help page"
+	@echo "$(CYAN)const$(CLEAR)   Generate constant source file"
+	@echo "$(CYAN)build$(CLEAR)   Build class files"
+	@echo "$(CYAN)jar$(CLEAR)     Generate JAR file"
+	@echo "$(CYAN)run$(CLEAR)     Run application"
+	@echo "$(CYAN)release$(CLEAR) Release application"
+	@echo "$(CYAN)clean$(CLEAR)   Clean generated files"
 
 const:
 	@echo "$(YELLOW)Generating constant source file$(CLEAR)"
@@ -36,8 +37,12 @@ jar: clean build
 	cd $(BUILD_DIR) && jar cvfm $(NAME)-$(VERSION).jar ../$(SOURCE_DIR)/manifest *
 
 run: jar
-	@echo "$(YELLOW)Runing application$(CLEAR)"
+	@echo "$(YELLOW)Running application$(CLEAR)"
 	java -jar $(BUILD_DIR)/$(NAME)-$(VERSION).jar
+
+release:
+	@echo "$(YELLOW)Releasing application$(CLEAR)"
+	release
 
 clean:
 	@echo "$(YELLOW)Cleaning generated files$(CLEAR)"
