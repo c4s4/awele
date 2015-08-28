@@ -20,4 +20,4 @@ Licensing
 ---------
 
 This application is released under the GPL license. For more information, please
-read the license in file <LICENSE.txt>.
+read [the license](LICENSE.txt).
